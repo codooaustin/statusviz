@@ -23,7 +23,7 @@ var oDropZone =null ;
 var oList =[] ;
 
 $(document).ready (function () {
-	// Initialization code
+	//Checks to see if you already have an access token
 	var accessToken =$.cookie ('accessToken') ;
 	if ( accessToken == "null" || accessToken == undefined || accessToken == "undefined" )
 		HostResetAccessToken () ;
@@ -35,7 +35,7 @@ $(document).ready (function () {
 	else
 		HostSetupTranslated (JSON.parse (oList)) ;
 
-	// Access Token request code
+	// Runs when the "Get Access Token Button" is clicked
 	$('#btnGetAccessToken').click (function (evt) {
 		$.ajax ({
 			url: window.location.protocol + '//' + window.location.host + '/api/token',
